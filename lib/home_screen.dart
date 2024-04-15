@@ -31,8 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 16),
             FilledButton(
-              onPressed: () {
-                themeController.changeTheme(!themeController.isDarkMode);
+              onPressed: () async {
+                final mode = themeController.getDarkMode();
+                themeController.setDarkMode(!mode);
               },
               style: ButtonStyle(
                 fixedSize: const MaterialStatePropertyAll(Size(200, 50)),
